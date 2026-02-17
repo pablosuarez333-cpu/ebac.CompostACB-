@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Compostaje | Administración de Usuarios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body { background-color: #f4f6f8; }
+        .navbar { background-color: #1e3a2f; }
+        .navbar-brand, .nav-link { color: #ffffff !important; }
+        .role-badge { font-size: 0.85rem; }
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Sistema de Compostaje</a>
+
+        <div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="unidades.html">Unidades/Lotes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registro.html">Registro Diario</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="alertas.html">Alertas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reportes.html">Reportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="usuarios.html">Usuarios</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+    <h4 class="mb-4">Administración de Usuarios</h4>
+
+    <!-- Tabla de Usuarios -->
+    <div class="card shadow-sm p-4 mb-4">
+        <h5>Usuarios Registrados</h5>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Rol</th>
+                        <th>Unidad Asignada</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan</td>
+                        <td><span class="badge bg-primary role-badge">Operador</span></td>
+                        <td>Unidad 1</td>
+                        <td><span class="badge bg-success estado">Activo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-danger" onclick="cambiarEstado(this)">Desactivar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>María</td>
+                        <td><span class="badge bg-warning text-dark role-badge">Responsable de Lote</span></td>
+                        <td>Unidad 2</td>
+                        <td><span class="badge bg-success estado">Activo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-danger" onclick="cambiarEstado(this)">Desactivar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Gustavo</td>
+                        <td><span class="badge bg-dark role-badge">Supervisor</span></td>
+                        <td>General</td>
+                        <td><span class="badge bg-success estado">Activo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-danger" onclick="cambiarEstado(this)">Desactivar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Formulario Nuevo Usuario -->
+    <div class="card shadow-sm p-4">
+        <h5>Agregar Nuevo Usuario</h5>
+
+        <form id="formUsuario">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+               <div class="col-md-4">
+                    <label for="rolUsuario" class="form-label">Rol</label>
+                    <select id="rolUsuario" name="rolUsuario" class="form-select" required>
+                        <option value="">Seleccionar Rol</option>
+                        <option value="operador">Operador</option>
+                        <option value="responsable">Responsable de Lote</option>
+                        <option value="supervisor">Supervisor</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="unidadAsignada" class="form-label">Unidad Asignada</label>
+                    <select id="unidadAsignada" name="unidadAsignada" class="form-select" required>
+                        <option value="">Seleccionar Unidad</option>
+                        <option value="unidad1">Unidad 1</option>
+                        <option value="unidad2">Unidad 2</option>
+                        <option value="unidad3">Unidad 3</option>
+                        <option value="general">General</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Registrar Usuario</button>
+        </form>
+
+        <div id="mensajeUsuario" class="alert alert-success mt-3 d-none">
+            Usuario registrado correctamente (simulación estática).
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function cambiarEstado(boton){
+    const fila = boton.closest("tr");
+    const estado = fila.querySelector(".estado");
+
+    if(estado.textContent === "Activo"){
+        estado.textContent = "Inactivo";
+        estado.className = "badge bg-secondary estado";
+        boton.textContent = "Activar";
+        boton.className = "btn btn-sm btn-outline-success";
+    } else {
+        estado.textContent = "Activo";
+        estado.className = "badge bg-success estado";
+        boton.textContent = "Desactivar";
+        boton.className = "btn btn-sm btn-outline-danger";
+    }
+}
+
+document.getElementById("formUsuario").addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("mensajeUsuario").classList.remove("d-none");
+    this.reset();
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

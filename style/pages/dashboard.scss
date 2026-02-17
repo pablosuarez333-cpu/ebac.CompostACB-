@@ -1,0 +1,16 @@
+.kpi-card {
+  @include card-shadow;
+  border-radius: $radius;
+  padding: $spacing-md;
+  background: #ffffff;
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  .kpi-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $primary;
+  }
+}

@@ -1,0 +1,12 @@
+.navbar-custom {
+  background-color: $primary;
+
+  .navbar-brand,
+  .nav-link {
+    color: #ffffff !important;
+  }
+
+  .nav-link:hover {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,11 @@
+.table-custom {
+  background-color: #ffffff;
+  border-radius: $radius;
+  overflow: hidden;
+  @include card-shadow;
+
+  th {
+    background-color: $primary;
+    color: #ffffff;
+  }
+}

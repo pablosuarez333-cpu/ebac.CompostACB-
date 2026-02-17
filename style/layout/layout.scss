@@ -1,0 +1,15 @@
+body {
+  font-family: $font-main;
+  background-color: $light-bg;
+  color: $dark-text;
+}
+
+.main-container {
+  padding: $spacing-lg;
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: $spacing-md;
+}
+

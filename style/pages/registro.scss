@@ -1,0 +1,6 @@
+.registro-form {
+  background: #ffffff;
+  padding: $spacing-lg;
+  border-radius: $radius;
+  @include card-shadow;
+}
