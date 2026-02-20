@@ -1,0 +1,15 @@
+.card-custom {
+  border: none;
+  border-radius: $radius;
+  @include card-shadow;
+  @include transition-fast;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  .card-title {
+    font-weight: 600;
+  }
+}
+

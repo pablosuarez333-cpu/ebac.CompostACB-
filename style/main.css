@@ -1,0 +1,115 @@
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #f4f6f5;
+  color: #1b1b1b;
+}
+
+.main-container {
+  padding: 2rem;
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.navbar-custom {
+  background-color: #2e7d32;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #ffffff !important;
+}
+.navbar-custom .nav-link:hover {
+  opacity: 0.8;
+}
+
+.sidebar {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 1rem;
+  border-right: 1px solid #e0e0e0;
+}
+.sidebar .nav-link {
+  color: #1b1b1b;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+.sidebar .nav-link:hover {
+  background-color: rgba(46, 125, 50, 0.1);
+}
+
+.card-custom {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease-in-out;
+}
+.card-custom:hover {
+  transform: translateY(-3px);
+}
+.card-custom .card-title {
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.5rem;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.2);
+}
+
+label {
+  font-weight: 500;
+}
+
+.table-custom {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.table-custom th {
+  background-color: #2e7d32;
+  color: #ffffff;
+}
+
+.alert-critical {
+  background-color: #c62828;
+  color: #ffffff;
+}
+
+.alert-warning-custom {
+  background-color: #f9a825;
+  color: #000000;
+}
+
+.kpi-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: #ffffff;
+}
+.kpi-card h4 {
+  font-size: 1.2rem;
+}
+.kpi-card .kpi-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.registro-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.user-table {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+}/*# sourceMappingURL=main.css.map */

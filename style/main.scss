@@ -1,0 +1,15 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+@import 'layout/layout';
+@import 'layout/navbar';
+@import 'layout/sidebar';
+
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/tables';
+@import 'components/alerts';
+
+@import 'pages/dashboard';
+@import 'pages/registro';
+@import 'pages/usuarios';

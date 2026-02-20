@@ -1,0 +1,13 @@
+.form-control,
+.form-select {
+  border-radius: $radius;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.2);
+  }
+}
+
+label {
+  font-weight: 500;
+}
